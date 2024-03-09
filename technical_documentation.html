@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Node.js Documentation</title>
+</head>
+
+<body>
+  <nav id="navbar">
+    <header>
+      <h2>Node.js Documentation</h2>
+    </header>
+    <ul>
+      <li><a class="nav-link" href="#Introduction_to_Node.js">
+          Introduction to Node.js
+        </a></li>
+      <li><a class="nav-link" href="#Installing_Node.js">
+          Installing Node.js
+        </a></li>
+      <li><a class="nav-link" href="#Node.js_Modules">
+          Node.js Modules
+        </a></li>
+      <li><a class="nav-link" href="#Node.js_API">
+          Node.js API
+        </a></li>
+      <li><a class="nav-link" href="#Node.js_Examples">
+          Node.js Examples
+        </a></li>
+    </ul>
+  </nav>
+
+  <main id="main-doc">
+    <section id="Introduction_to_Node.js" class="main-section">
+      <header>
+        <h2>Introduction to Node.js</h2>
+      </header>
+      <p>
+        Node.js is a runtime environment that allows you to
+        execute JavaScript code server-side. It is built on
+        the V8 JavaScript runtime and provides a platform
+        for building scalable and high-performance network
+        applications.
+      </p>
+      <p>
+        Key features of Node.js include its non-blocking,
+        event-driven architecture, which makees it suitable
+        for handling concurrent connections and building
+        real-time applications. Additionally, Node.js uses
+        an asynchronous, single-threaded model to handle
+        multiple requests efficiently.
+      </p>
+      <p>
+        Here are some fundamental concenpts you need to
+        understand when working with Node.js:
+      </p>
+      <ul>
+        <li>
+          <strong>Event Loop:</strong> Node.js uses an
+          event-driven, non-blocking I/O model. The event
+          loop allows Node.js to handle multiple tasks
+          concurrently without blocking the execution of
+          other code.
+        </li>
+        <br>
+        <li>
+          <strong>Modules:</strong> Node.js uses a module
+          system to organize code into reusable and
+          maintainable units. You can create your modules
+          and use built-in modules or third-party modules
+          from the Node Package Manager (NPM).
+        </li>
+        <br>
+        <li>
+          <strong>npm:</strong> Node Package Manager (npm)
+          is the default package manager for Node.js. It
+          allows you to install, share, and manage
+          dependencies for your Node.js projects.
+        </li>
+        <br>
+        <li>
+          <strong>Express.js:</strong> A popular web
+          application framework for Node.js, Express
+          simplifies the process of building robust and
+          scalable web applications and APIs.
+        </li>
+        <br>
+        <li>
+          <strong>Callback Functions:</strong> Asynchronous
+          programming in Node.js often involves the use of
+          callback functions to handle the completion of
+          asynchronous tasks
+        </li>
+      </ul>
+      <p>
+        Node.js is widely used for various applications,
+        including building web servers, APIs, microservices,
+        and real-time applications. Its versatility and
+        performance make it a preferred choice for many
+        developers.
+      </p>
+      <p>
+        Node.js supports the CommonJS module system,
+        allowing you to organize your code into reusable
+        and maintainable modules.
+      </p>
+      <p>
+        The npm registry hosts a vast collection of packages
+        and libraries that you can easily integrate into
+        your Node.js projects to enhance functionality and
+        save development time.
+      </p>
+      <p>
+        When handling asynchronous operations in Node.js,
+        it's crucial to understand how to use Promises and
+        async/await to manage and coordinate asynchronous
+        tasks effectively.
+      </p>
+      <p>
+        Node.js provides a built-in 'http' module that
+        allows you to create HTTP servers and handle HTTP
+        requests and responses.
+      </p>
+      <p>
+        Understanding the Node.js event-driven architecture
+        is essential for writing scalable and efficient
+        applications that can handle a large number of
+        concurrent connections.
+      </p>
+      <code>// Additional Node.js code snippet</code>
+      <pre><code>
+            const fs = require('fs');
+
+            // Reading a file asynchronously using callbacks
+            fs.readFile('example.txt', 'utf8', (err, data) => {
+              if (err) {
+                console.log(err);
+                return;
+              }
+              console.log(data);
+            });
+          </code></pre>
+
+      <code>// Another Node.js code snippet</code>
+      <pre><code>
+            // Using the 'request' module to make an HTTP 
+            request 
+            const request = require('request');
+
+            request('https://www.example.com', (error, response,
+            body) => {
+              if (!error && response.statusCode == 200) {
+                console.log(body);
+              }
+            });
+          </code></pre>
+
+      <code>// Yet another Node.js code snippet</code>
+      <pre><code>
+            // Creating a simple Express.js server
+            const express = require('express');
+            const app = express();
+
+            app.get('/', (req, res) => {
+              res.send('Hello, Express!');
+            });
+
+            const port = 3000;
+            app.listen(port, () => {
+              console.log('Server running at 
+              http://localhost:${port}');
+            });
+          </code></pre>
+      <p>
+        Explore the documentation to delve deeper into
+        Node.js and unlock its full potential for your
+        projects.
+      </p>
+    </section>
+    <section id="Installing_Node.js" class="main-section">
+      <header>
+        <h2>Installing Node.js</h2>
+      </header>
+      <p>
+        Installing Node.js is a straightforward process,
+        and it allows you to start building and running
+        JavaScript applications on your machine. Follow
+        these steps to install Node.js:
+      </p>
+      <ol>
+        <li>
+          <strong>Download Node.js:</strong> Visit the
+          official Node.js website (https://nodejs.org/) and
+          download the LTS (Long-Term Support) version or
+          the latest stable version based on your
+          preference.
+        </li>
+        <br>
+        <li>
+          <strong>Run the Installer:</strong> Once the
+          download is complete, run the installer and
+          follow the on-screen instructions. The installer
+          will guide you through the installation process.
+        </li>
+        <br>
+        <li>
+          <strong>Verify Installation:</strong> To verify
+          that Node.js and npm (Node Package Manager) are
+          installed correctly, open a command prompt or
+          terminal and run the following commands:
+          <br>
+          <code>node -v</code> (This should print the
+          installed Node.js version)
+          <br>
+          <code>npm -v</code> (This should print the
+          installed npm version)
+        </li>
+      </ol>
+      <p>
+        Node.js installation includes npm by default, which
+        allows you to manage packages and dependencies for
+        your projects easily. With Node.js installed, you
+        can start creating and running JavaScript
+        applications both on the server and locally.
+      </p>
+      <p>
+        Here's a simple command to create a new Node.js
+        project using npm:
+      </p>
+      <code>npm init</code>
+      <p>
+        This command initiates a wizard that helps you set
+        up a new Node.js project by creating a
+        <code>package.json</code> file.
+        The <code>package.json</code> file contains metadata
+        about your project and its dependencies.
+      </p>
+      <p>
+        After initializing your project, you can install
+        packages using <code>npm install</code> command.
+        For example:
+      </p>
+      <code>npm install express</code>
+      <p>
+        This installs the Express.js framework, which is
+        widely used for building web applications with
+        Node.js.
+      </p>
+      <p>
+        Node.js also supports the use of managers, such as
+        <a href="https://github.com/nvm-sh/nvm" target="_blank">Node Version Manager (nvm)</a> or
+        <a href="https://github.com/nodenv/nodenv" target="_blank">nodenv</a>, to manage multiple
+        Node.js versions on your machine.
+      </p>
+      <p>
+        Keep in mind that some npm packages may require
+        global installation. You can install them with
+        <code>-g</code> flag. For example:
+      </p>
+      <code>npm install -g nodemon</code>
+      <p>
+        Nodemon is a tool that helps in development by
+        automatically restarting the Node.js application
+        when file changes are detected.
+      </p>
+      <ul>
+        <li>
+          <strong>Explore npm Scripts:</strong> Utilize npm
+          scripts in your <code>package.json</code> to
+          define custom tasks and automate various processes
+          in your Node.js project.
+        </li>
+      </ul>
+      <code>
+            // Example npm script to start your Node.js 
+            application
+          </code>
+      <pre>
+            <code>
+              "scripts": {
+                "start": "node app.js"
+              }
+            </code>
+          </pre>
+      <code>
+              // Another npm script example to run tests
+          </code>
+      <pre>
+            <code>
+              "scripts": {
+                "test": "mocha"
+              }
+            </code>
+          </pre>
+      <code>
+            // One more npm script example for building your 
+            project
+          </code>
+      <pre>
+            <code>
+              "scripts": {
+                "build": "webpack"
+              }
+            </code>
+          </pre>
+      <p>
+        Now that you have Node.js and npm installed, along
+        with some essential tools and packages, you're
+        well-equipped to start your Node.js development
+        journey!
+      </p>
+    </section>
+    <section id="Node.js_Modules" class="main-section">
+      <header>
+        <h2>Node.js Modules</h2>
+      </header>
+      <p>
+        In Node.js, modules are a crucial concept for
+        organizing code into reusable and maintainable
+        components. Let's explore the key aspects of
+        working with Node.js modules:
+      </p>
+      <ol>
+        <li>
+          <strong>Creating Modules:</strong> You can create
+          your own modules by defining a JavaScript file
+          and using the 'module.exports' object to expose
+          functions, objects, or variables that you want to
+          make accessible from other files.
+        </li>
+        <br>
+        <li>
+          <strong>Using Built-in Modules:</strong> Node.js
+          provides a set of built-in modules that you can
+          directly use in your applications. Common examples
+          include the 'fs' (File System) module for file
+          operations and the 'http' module for creating
+          HTTP servers.
+        </li>
+        <br>
+        <li>
+          <strong>Require Statement:</strong> The 'require'
+          statement is used to include external modules in
+          your code. It allows you to import funtionality
+          from other files or built-in modules.
+        </li>
+        <br>
+        <li>
+          <strong>npm Modules:</strong>
+          npm (Node Package Manager) is a vast repository of
+          third-party modules that you can easily integrate
+          into your projects. Use the 'npm install' command
+          to add dependencies to your project.
+        </li>
+        <br>
+        <li>
+          <strong>Module Paths:</strong> Node.js resolves
+          module paths based on the file system.
+          Understanding how Node.js locates modules is
+          crucial for efficient project structuring.
+        </li>
+      </ol>
+      <p>
+        Let's delve deeper into each of these aspects:
+      </p>
+      <p>
+        <strong>1. Creating Modules:</strong> To create a
+        module, define a JavaScript file
+        (e.g. 'myModule.js') and use the 'module.exports'
+        object to expose functionality:
+      </p>
+      <code>
+            // myModule.js 
+          </code>
+      <pre>
+            <code>
+              const greeting = () => {
+                return 'Hello, from my module!';
+              };
+
+              module.exports = greeting;
+            </code>
+          </pre>
+      <p>
+        <strong>2. Using Built-in Modules:</strong> Node.js
+        provides modules for various functionalities. for
+        instance, you can use the 'fs' module for file
+        operations:
+      </p>
+      <code>
+            // Example of using the fs module
+          </code>
+      <pre>
+            <code>
+              const fs = require('fs');
+
+
+              fs.readFile('example.txt', 'utf8', (err, data) =>{
+                if (err) {
+                  console.error(err);
+                  return;
+                }
+                console.log(data);
+              });
+            </code>
+          </pre>
+      <p>
+        <strong>3. Require Statement:</strong> Use the
+        'require' statement to include external modules in
+        your code:
+      </p>
+      <code>
+            // Requiring a custom module
+          </code>
+      <pre>
+            <code>
+              const myModule = require('./myModule');
+              console.log(myModule()); // Outputs: Hello, from
+              my module!
+            </code>
+          </pre>
+      <p>
+        <strong>4. npm Modules:</strong> Install third-party
+        modules using npm and include them in your project:
+      </p>
+      <code>
+            // Installing third-party module using npm
+          </code>
+      <pre>
+            <code>
+              npm install lodash
+            </code>
+          </pre>
+      <code>
+            // Requiring and using the lodash module
+          </code>
+      <pre>
+            <code>
+              const _ = require('lodash');
+
+              const numbers = [1, 2, 3, 4, 5];
+              const sum = _.sum(numbers);
+              console.log(sum); // Outputs: 15
+            </code>
+          </pre>
+      <p>
+        <strong>5. Module Paths:</strong> Node.js resolves
+        module paths based on the file system structure.
+        Understanding how Node.js locates modules is
+        crucial for efficient project structuring.
+        The following is an example of relative path
+        require:
+      </p>
+      <code>
+            // Requiring a module with a relative path
+          </code>
+      <pre>
+            <code>
+              const myLocalModule = require(
+                './path/to/myLocalModule'
+                );
+
+              console.log(myLocalModule()); // Outputs: Hello,
+              from my module!
+            </code>
+          </pre>
+      <p>
+        <strong>6. Module Loading:</strong> Node.js follows
+        a common module loading process. It caches modules
+        after the first require, which can affect the
+        behavior of your application. Be aware of this when
+        working with mutable objects or shared states across
+        modules.
+      </p>
+      <p>
+        <strong>7. ES6 Module Syntax:</strong> With the
+        introduction of ECMAScript 6 (ES6), you can use the
+        'import' and 'export' statements to work with
+        modules. This syntax provides a more standardized
+        and expressive way of handling dependencies.
+      </p>
+      <p>
+        Node.js modules provide a powerful and flexible way
+        to structure and organize your code, making it
+        easier to maintain and scale your projects. As you
+        continue working with Node.js, mastering the use of
+        modules will be fundamental to building robust
+        applications.
+      </p>
+    </section>
+    <section id="Node.js_API" class="main-section">
+      <header>
+        <h2>Node.js API</h2>
+      </header>
+      <p>
+        The Node.js API (Application Programming Interface)
+        provides a set of modules and features for building
+        server-side applications. Understanding the Node.js
+        API is essential for harnessing the full power of
+        Node.js in your projects. Let's explore some key
+        aspects of the Node.js API:
+      </p>
+      <ol>
+        <li>
+          <strong>HTTP Module:</strong> Node.js includes a
+          built-in HTTP module that allows you to create
+          HTTP servers and handle HTTP requests and
+          responses.
+        </li>
+        <br>
+        <li>
+          <strong>File System Module (fs):</strong> The 'fs'
+          module provides methods for interacting with the
+          file system. You can read, write, and manipulate
+          files using this module.
+        </li>
+        <br>
+        <li>
+          <strong>Events Module:</strong> The 'events'
+          module allows you to work with events and event
+          emmiters. It's a core module that facilitates
+          event-driven programming in Node.js.
+        </li>
+        <br>
+        <li>
+          <strong>URL Module:</strong> The 'url' module
+          provides utilities for URL parsing and formatting.
+          It's particularily useful when working with HTTP
+          servers and parsing request URLs.
+        </li>
+        <br>
+        <li>
+          <strong>Query String Module:</strong>
+          The 'querystring' module provides utilities for
+          working with query strings. It's often used in
+          conjunction with the URL module.
+        </li>
+      </ol>
+      <p>
+        Let's delve deeper into each of these aspects:
+      </p>
+      <p>
+        <strong>1. HTTP Module:</strong>
+      </p>
+      <code>
+            // Creating a simple HTTP server
+          </code>
+      <pre>
+            <code>
+              const http = require('http');
+
+              const server = http.createServer((req, res) => {
+                res.writeHead(200, {'Content-Type': 'text/plain'
+                });
+                res.end('Hello, Node.js!');
+              });
+
+              const port = 3000;
+              server.listen(port, () => {
+                console.log('Server running at 
+                http://localhost:${port}');
+              });
+            </code>
+          </pre>
+      <p>
+        <strong>2. File System Module (fs):</strong>
+      </p>
+      <code>
+            // Reading a file using the fs module
+          </code>
+      <pre>
+            <code>
+              const fs = require('fs');
+
+              fs.readFile('example.txt', 'utf8', (err, data) =>{
+                if (err) {
+                  console.log(err);
+                  return;
+                }
+                console.log(data);
+              });
+            </code>
+          </pre>
+      <p>
+        <strong>3. Events Module:</strong>
+      </p>
+      <code>
+            // Using the Events module
+          </code>
+      <pre>
+            <code>
+              const events = require('events');
+
+              // Creating an event emitter
+              const myEmitter = new events.EventEmitter);
+
+              // Event listener
+              myEmitter.on('customEvent', (message) => {
+                console.log(message);
+              });
+
+              // Emitting the custom event
+              myEmitter.emit('customEvent', 'Hello, Node.js!');
+            </code>
+          </pre>
+      <p>
+        <strong>
+          4. URL Module:
+        </strong>
+      </p>
+      <code>
+            // Parsing and formatting URLs using the URL module
+          </code>
+      <pre>
+            <code>
+              const url = require('url');
+
+              // Parsing a URL
+              const parsedUrl = url.parse('https://example.com/path?query=123');
+              console.log(parsedUrl);
+
+              // Formatting a URL
+              const formattedUrl = url.format({
+                protocol: 'https',
+                hostname: 'example.com',
+                pathname: '/path',
+                query: 'query=123'
+              }); 
+              console.log(formattedUrl);
+            </code>
+          </pre>
+      <p>
+        <strong>5. Query String Module:</strong>
+      </p>
+      <code>
+            // Parsing and formatting query strings using the
+            querystring module
+          </code>
+      <pre>
+            <code>
+              const querystring = require('querystring');
+
+              // Parsing a query string
+              const parsedQueryString = querystring.parse('name=John&age=30');
+              console.log(parsedQueryString);
+
+              // Formatting a query string
+              const formattedQueryString = querystring.stringify({name: 'John', age: 30});
+              console.log(formattedQueryString);
+            </code>
+          </pre>
+    </section>
+    <section id="Node.js_Examples" class="main-section">
+      <header>
+        <h2>Node.js Examples</h2>
+      </header>
+      <p>
+        Node.js is a versatile platform, and here are
+        some practical examples showcasing its
+        capabilities in various scenarios:
+      </p>
+      <ol>
+        <li>
+          <strong>
+            Creating a Simple HTTP Server:
+          </strong>
+          <p>
+            This example demonstrates the basic setup
+            of an HTTP server using Node.js.
+          </p>
+          <code>
+                const http = require('http');
+                
+                const server = http.createServer((req,
+                res) => {
+                  res.writeHead(200, { 'Content-Type':
+                  'text/plain' });
+                  res.end('Hello, Node.js!');
+                }); 
+
+                server.listen(3000, 'localhost', () => {
+                  console.log('Server listening on port 
+                  3000');
+                });
+              </code>
+        </li>
+        <br>
+        <li>
+          <strong>
+            Building a RESTful API with Express:
+          </strong>
+          <p>
+            Explore the world of RESTful APIs by
+            creating routes and handling HTTP methods
+            using the Express framework.
+          </p>
+          <code>
+                const express = require('express');
+                const app = express();
+                const port = 3000;
+                
+                app.get('/', (req, res) => {
+                  res.send('Welcome to RESTful API');
+                });
+
+                app.listen(port, () => {
+                  console.log('RESTful API server 
+                  listening on port ${port}');
+                });
+              </code>
+        </li>
+        <br>
+        <li>
+          <strong>
+            Asychronous File Reading:
+          </strong>
+          <p>
+            Learn how to read files asynchronously, a
+            common task in server-side applications.
+          </p>
+          <code>
+                const fs = require('fs');
+
+                fs.readFile('example.txt', 'utf8', (err,
+                data) => {
+                  if (err) throw err;
+                  console.log('File consten:', data);
+                });
+              </code>
+        </li>
+        <br>
+        <li>
+          <strong>
+            Connecting to a Database with MongoDB:
+          </strong>
+          <p>
+            Integrate MongoDB, a popular NoSQL
+            database, into your Node.js application
+            using Mongoose.
+          </p>
+          <code>
+                const mongoose = require('mongoose');
+                mongoose.connect
+                ('mongoose://localhost:27017/mydatabase', 
+                { userNewUrlParser: true,
+                 useUnifiedTopology: true });
+
+                 const db = mongoose.connection;
+                 db.on('error', console.error.bind(
+                   console, 'MongoDB connection error:'));
+                 db.once('open', () => {
+                   console.log('Connected to MongoDB');
+                 });
+              </code>
+        </li>
+        <br>
+        <li>
+          <strong>
+            Real-time Communication with Socket.io:
+          </strong>
+          <p>
+            Implement real-time communication between
+            clients and the serves using Socket.io.
+          </p>
+          <code>
+                const express = require('express');<br>
+                const http = require('http');<br>
+                const socketIO = require('socket.io');
+                <br><br>
+                const app = express();<br>
+                const server = http.createServer(app);<br>
+                const io = socketIO(server);<br>
+                <br>
+                io.on('connection', (socket) => {
+                  console.log('A user connected');
+                  socket.on('disconnect', () => {
+                    console.log('User disconnected');
+                  });
+                });
+                <br><br>
+                server.listen(3000, () => {
+                  console.log('Socket.io server listening
+                  on port 3000');
+                });
+              </code>
+        </li>
+      </ol>
+      <p>
+        <strong>
+          6. Managing User Authentication with
+          Passport:
+        </strong>
+      </p>
+      <p>
+        Learn how to implement user authentication in
+        your Node.js application using the Passport
+        middleware.
+      </p>
+      <p>
+        <strong>
+          7. Handling Forms with Formidable:
+        </strong>
+      </p>
+      <p>
+        Utilize the Formidable module to handle form
+        data in your Node.js application efficiently.
+      </p>
+      <p>
+        <strong>
+          8. Implementing WebSockets with ws:
+        </strong>
+      </p>
+      <p>
+        Extend your knowledge of WebSockets by
+        implementing a real-time chat application using
+        the 'ws' module.
+      </p>
+      <p>
+        These examples showcase the versatility of
+        Node.js in various application scenarios.
+        Experiment with them to deepen your
+        understanding and harness the power of Node.js
+        for your projects.
+      </p>
+    </section>
+  </main>
+</body>
+
+</html>
